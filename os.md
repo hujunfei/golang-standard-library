@@ -263,3 +263,98 @@ func Getgid() int
 func Getgroups() ([]int, error)
 ```
 <code>Getgroups</code>返回调用者所属组ID的列表
+###func Getpagesize
+```go
+func Getpagesize() int
+```
+<code>Getpagesize</code>返回底层系统的内存页大小
+###func Getpid
+```go
+func Getpid() int
+```
+<code>Getpid</code>返回调用者的进程ID，即pid
+###func Getppid
+```go
+func Getppid() int
+```
+<code>Getppid</code>返回调用者的父进程ID，即ppid
+###func Getuid
+```go
+func Getuid() int
+```
+<code>Getuid</code>返回调用者的用户ID，即uid
+###func Getwd
+```go
+func Getwd() (pwd string, err error)
+```
+<code>Getwd</code>返回当前目录的根路径名称(即全路径)。若当前目录可以通过多个路径访问(软链接)，<code>Getwd</code>返回其中之一。
+###func Hostname
+```go
+func Hostname() (name string, err error)
+```
+<code>Hostname</code>返回内核上报的主机名
+###func IsExist
+```go
+func IsExist(err error) bool
+```
+<code>IsExist</code>返回布尔值，指示该<code>error</code>是否表示文件或目录已经存在。它满足<code>ErrExist</code>及一些syscall错误。
+###func IsNotExist
+```go
+func IsNotExist(err error) bool
+```
+<code>IsNotExist</code>返回布尔值，指示该<code>error</code>是否表示文件或目录不存在。它满足<code>ErrNotExist</code>及一些syscall错误。
+###func IsPathSeparator
+```go
+func IsPathSeparator(c uint8) bool
+```
+<code>IsPathSeparator</code>在c是目录分隔字符时返回true。
+###func IsPermission
+```go
+func IsPermission(err error) bool
+```
+<code>IsPermission</code>返回布尔值，指示该<code>error</code>是否表示拒绝授权。它满足<code>ErrPermission</code>及一些syscall错误。
+###func Lchown
+```go
+func Lchown(name string, uid, gid int) error
+```
+<code>Lchown</code>修改指定文件的uid和gid。若文件是软链接，则修改软链接本身的uid和gid。若产生error，则类型为<code>*PathError</code>。
+###func Link
+```go
+func Link(oldname, newname string) error
+```
+<code>Link</code>以newname创建oldname文件的硬链接。若产生error，则类型为<code>*LinkError</code>
+###func Mkdir
+```go
+func Mkdir(name string, perm FileMode) error
+```
+<code>Mkdir</code>以指定名称和权限位创建新目录。若产生error，则类型为<code>*PathError</code>
+###func MkdirAll
+```go
+func MkdirAll(path string, perm FileMode) error
+```
+<code>MkdirAll</code>以指定名称和权限位创建新目录，若父级目录不存在，则创建必需的父级目录，并返回nil。权限位<code>perm</code>应用于MkdirAll创建的所有目录。若路径存在，MkdirAll不做任何操作，并返回nil。
+###func NewSyscallError
+```go
+func NewSyscallError(syscall string, err error) error
+```
+<code>NewSyscallError</code>返回一个新的<code>SyscallError</code>，类型为<code>error</code>，该error带有指定的系统调用名称和错误细节。依照惯例，若<code>err</code>是nil，则<code>NewSyscallError</code>返回nil。
+###func Readlink
+```go
+func Readlink(name string) (string, error)
+```
+<code>Readlink</code>返回指定软链接指向的目标。若产生error，则类型为<code>*PathError</code>。
+###func 
+```go
+func
+```
+<code></code>
+###func
+```go
+func
+```
+<code></code>
+###func
+```go
+func
+```
+<code></code>
